@@ -14,20 +14,21 @@ public class Ball : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        rb.velocity = new Vector2(5f, 5f);
-
-        Debug.Log(rb.velocity);
+        //
+        //rb.velocity = new Vector2(5f, 5f);
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
     }
 
     private void FixedUpdate()
     {
-        //LauchBall();
+        LauchBall();
     }
 
     public void LauchBall()
