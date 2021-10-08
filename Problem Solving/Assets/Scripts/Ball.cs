@@ -13,20 +13,32 @@ public class Ball : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        rb.velocity = new Vector2(5f, 5f);
+
+        Debug.Log(rb.velocity);
     }
 
     // Update is called once per frame
     void Update()
     {
-        float rand = Random.RandomRange(0, 4);
-        movement.x = rand;
-        movement.y = rand;
-        Debug.Log(movement);
+       
     }
 
     private void FixedUpdate()
     {
+        //LauchBall();
+    }
+
+    public void LauchBall()
+    {
+        //float rand = Random.RandomRange(0, 4);
+        //movement.x = rand;
+        //movement.y = rand;
+        //Debug.Log(movement);
+
         rb.MovePosition(rb.position + (movement * speed * Time.deltaTime));
+
     }
 
 }
