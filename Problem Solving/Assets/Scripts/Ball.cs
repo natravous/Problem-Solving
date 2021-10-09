@@ -14,8 +14,7 @@ public class Ball : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //
-        //rb.velocity = new Vector2(5f, 5f);
+        
         movement = new Vector2(0f, 0f);
     }
 
@@ -27,11 +26,9 @@ public class Ball : MonoBehaviour
             mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         }
-
-
+        
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        //movement = Vector2.Lerp(transform.position, mousePosition, speed);
     }
 
     private void FixedUpdate()
@@ -43,14 +40,8 @@ public class Ball : MonoBehaviour
 
     public void LauchBall()
     {
-        //float rand = Random.RandomRange(0, 4);
-        //movement.x = rand;
-        //movement.y = rand;
-        //Debug.Log(movement);
-
         rb.MovePosition(rb.position + (movement * speed * Time.deltaTime));
-        //rb.MovePosition(movement);
-
+        
     }
 
 }
