@@ -44,12 +44,12 @@ public class Ball : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == "Box")
-        {
-            Score.scoreValue++;
-            Destroy(collision.gameObject);
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if(collision.tag == "Box")
+    //    {
+    //        Score.scoreValue++;
+    //        Destroy(collision.gameObject);
+    //    }
+    //}
 }
